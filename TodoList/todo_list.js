@@ -6,6 +6,7 @@ const taskInput = document.getElementById("taskInput");
 const addTaskBtn = document.getElementById("addTaskBtn");
 const taskList = document.getElementById("taskList");
 const clearCompletedBtn = document.getElementById("clearCompletedBtn");
+const clearAllTasksBtn = document.getElementById("clearAllTasksBtn");
 
 // Declare an empty array:
 
@@ -52,10 +53,18 @@ function clearCompletedTasks() {
     displayTasks();
 }
 
+// Create the clearAllTasks function:
+
+function clearAllTasks() {
+    tasks.length = 0;
+    displayTasks();
+}
+
 // Perform addEventListener for addTask and clearCompletedTasks buttons to listen for clicks after clicking the Add Task and Clear Completed buttons.
 
 addTaskBtn.addEventListener("click", addTask);
 clearCompletedBtn.addEventListener("click", clearCompletedTasks);
+clearAllTasksBtn.addEventListener("click", clearAllTasks);
 
 // The function calls the displayTasks function to show the entered todo task after clicking the Add Task button.
 
